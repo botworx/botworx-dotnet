@@ -1,0 +1,41 @@
+//'do' = 'do;all'
+//Order = Sequence, Success = All
+do
+    print "hello"
+    print "hello"
+    print "hello"
+
+//Order = Sequence, Success = Something
+do something
+    print "hello"
+    print "hello"
+    print "hello"
+
+//Order = Random, Success = All
+do random
+    weight 1
+        print "hello"
+    weight 1
+
+//?
+do something random
+do something random weighted
+do something weighted
+
+//everything, anything, something?
+//every, any, some?
+
+//Normal 'maybe' = 'maybe;all'
+//Order = Sequence, Success = Any
+maybe
+    print "hello"
+    print "hello"
+    print "hello"
+
+//Weighted 'maybe'
+//Order = Random, Success = Any
+maybe random
+    weight 1
+        print "hello"
+    weight 1
+        

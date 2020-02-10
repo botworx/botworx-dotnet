@@ -1,0 +1,28 @@
+﻿<Page x:Class="Botworx.Wpf.Test.TreeViewTestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	  Title="TreeViewTestPage"
+      WindowTitle="TreeView Test Page"
+      >
+    <Page.Resources>
+    </Page.Resources>
+    <ItemsControl>
+        <Hyperlink NavigateUri="TreeViewTestPage.xaml">
+            Good Old Fashioned TreeView
+        </Hyperlink>
+        <Hyperlink NavigateUri="GraphTreeViewTestPage.xaml">
+            Graph TreeView
+        </Hyperlink>
+        <Grid>
+            <TreeView Name="treeView1" ItemsSource="{Binding Source={StaticResource xmlDataProvider}, XPath=*}" ItemTemplate="{StaticResource NodeTemplate}">
+                <!-- TreeView Name="treeView1" ItemsSource="{Binding Source={StaticResource InventoryData}, XPath=*}" ItemTemplate="{StaticResource NodeTemplate}"-->
+                <TreeView.Resources>
+                </TreeView.Resources>
+            </TreeView>
+        </Grid>
+    </ItemsControl>
+</Page>

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D4CF862-F264-4C13-9B39-2FEAC553E440}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Botworx.Mia</RootNamespace>
+    <AssemblyName>BwMia</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtomFlag.cs" />
+    <Compile Include="Compile\Ast\AtomDef.cs" />
+    <Compile Include="Compile\Ast\Definition.cs" />
+    <Compile Include="Compile\Ast\Expression.cs" />
+    <Compile Include="Compile\Ast\SelectStmt.cs" />
+    <Compile Include="Compile\Ast\Stmt.cs" />
+    <Compile Include="Compile\NodeUser.cs" />
+    <Compile Include="Compile\Parse\Irony\Composer.cs" />
+    <Compile Include="Compile\Parse\Irony\MiaGrammar.cs" />
+    <Compile Include="Compile\Parse\Irony\MiaTerminalFactory.cs" />
+    <Compile Include="Compile\Transpile\Policy\BlockStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\BrainDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\CaseStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\ClauseExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\ContextDecoratorDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\ContextDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Context\ContextClauseExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Context\ContextPolicy.cs" />
+    <Compile Include="Compile\Transpile\Policy\Context\ContextNameVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\EntityDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\ExpressionVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\RootBlockVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\FunctionDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\AtomTypeDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\LhsVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Lhs\ClauseCondStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Lhs\CondStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Lhs\LhsClauseExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Lhs\LhsPolicy.cs" />
+    <Compile Include="Compile\Transpile\Policy\LiteralExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\NameVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\PredicateDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\RhsStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\EffectVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\SnippetExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\RhsMsgEffectVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\NamespaceStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\ProbabilitySelectDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\RhsClauseExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\RhsMsgPolicy.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\RhsNameVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Rhs\RhsPolicy.cs" />
+    <Compile Include="Compile\Transpile\Policy\RootPolicy.cs" />
+    <Compile Include="Compile\Transpile\Policy\SelectStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\StmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\TaskDefVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\TriggerStmtVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Trigger\TriggerNameVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Trigger\TriggerMessageExprVisit.cs" />
+    <Compile Include="Compile\Transpile\Policy\Trigger\TriggerClauseExprVisit.cs" />
+    <Compile Include="Compile\Ast\SnippetExpr.cs" />
+    <Compile Include="Compile\Ast\LiteralExpr.cs" />
+    <Compile Include="Compile\Ast\Name.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Compile\Ast\ClauseFrame.cs" />
+    <Compile Include="Compile\Ast\AstNodeTag.cs" />
+    <Compile Include="Compile\Ast\OperatorExpr.cs" />
+    <Compile Include="Compile\Ast\SlotKind.cs" />
+    <Compile Include="Compile\Parse\ParserDialect.cs" />
+    <Compile Include="Compile\Parse\Parser_Eval.cs" />
+    <Compile Include="Compile\Parse\Parser_Expression.cs" />
+    <Compile Include="Compile\Parse\Parser_Main.cs" />
+    <Compile Include="Compile\Parse\ParserState.cs" />
+    <Compile Include="Compile\Scope.cs" />
+    <Compile Include="Compile\TokenInfo.cs" />
+    <Compile Include="Compile\TokenInstance.cs" />
+    <Compile Include="Compile\Transpile\Policy\Trigger\TriggerPolicy.cs" />
+    <Compile Include="Compile\Transpile\TranspilerState.cs" />
+    <Compile Include="Compile\NodeVisit.cs" />
+    <Compile Include="Compile\NodeVisitorPolicy.cs" />
+    <Compile Include="MatchFlag.cs" />
+    <Compile Include="MessageKind.cs" />
+    <Compile Include="Compile\Assembler.cs" />
+    <Compile Include="Compile\Ast\StmtBlock.cs" />
+    <Compile Include="Compile\Ast\BrainDef.cs" />
+    <Compile Include="Compile\Ast\BuiltinDefs.cs" />
+    <Compile Include="Compile\Ast\ClassDef.cs" />
+    <Compile Include="Compile\Ast\LhsCondStmt.cs" />
+    <Compile Include="Compile\Ast\ClauseExpr.cs" />
+    <Compile Include="Compile\Ast\CondStmt.cs" />
+    <Compile Include="Compile\Ast\ConstantDef.cs" />
+    <Compile Include="Compile\Ast\ContextDecoratorDef.cs" />
+    <Compile Include="Compile\Ast\ContextDef.cs" />
+    <Compile Include="Compile\Ast\DecoratorDef.cs" />
+    <Compile Include="Compile\Ast\Effect.cs" />
+    <Compile Include="Compile\Ast\AtomTypeDef.cs" />
+    <Compile Include="Compile\Ast\EntityDef.cs" />
+    <Compile Include="Compile\Ast\ExpertDef.cs" />
+    <Compile Include="Compile\Ast\RootBlock.cs" />
+    <Compile Include="Compile\Ast\FunctionDef.cs" />
+    <Compile Include="Compile\Ast\LhsDef.cs" />
+    <Compile Include="Compile\Ast\MessageEffect.cs" />
+    <Compile Include="Compile\Ast\ModuleDef.cs" />
+    <Compile Include="Compile\Ast\NamespaceBlock.cs" />
+    <Compile Include="Compile\Ast\AstNode.cs" />
+    <Compile Include="Compile\Ast\AstNodeKind.cs" />
+    <Compile Include="Compile\Ast\PredicateDef.cs" />
+    <Compile Include="Compile\Ast\ProbabilitySelectDef.cs" />
+    <Compile Include="Compile\Ast\RhsDef.cs" />
+    <Compile Include="Compile\Ast\TaskDef.cs" />
+    <Compile Include="Compile\Ast\TriggerStmt.cs" />
+    <Compile Include="Compile\Ast\Var.cs" />
+    <Compile Include="Compile\Ast\WhereDef.cs" />
+    <Compile Include="Compile\Builder.cs" />
+    <Compile Include="Compile\Compiler.cs" />
+    <Compile Include="Compile\Parse\Parser.cs" />
+    <Compile Include="Compile\Parse\Parser_Context.cs" />
+    <Compile Include="Compile\Parse\Parser_Lhs.cs" />
+    <Compile Include="Compile\Parse\Parser_Message.cs" />
+    <Compile Include="Compile\Parse\Parser_Rhs.cs" />
+    <Compile Include="Compile\Parse\Parser_Task.cs" />
+    <Compile Include="Compile\Preprocessor.cs" />
+    <Compile Include="Compile\Token.cs" />
+    <Compile Include="Compile\Tokenizer.cs" />
+    <Compile Include="Compile\TokenKind.cs" />
+    <Compile Include="Compile\Transpile\Transpiler.cs" />
+    <Compile Include="Compile\NodeVisitor.cs" />
+    <Compile Include="FileSystem\File.cs" />
+    <Compile Include="FileSystem\Folder.cs" />
+    <Compile Include="FileSystem\FsObject.cs" />
+    <Compile Include="FileSystem\Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\Agency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Agent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Archiver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Atom.cs" />
+    <Compile Include="Runtime\Brain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\BrainFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Clause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\ClausePattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Context.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Deliberator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Expert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Frame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Goal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\AtomType.cs" />
+    <Compile Include="Runtime\MentalTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\MessagePattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Method.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Process.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Proposal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Reactor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Scheduler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Trigger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BwCore\BwCore.csproj">
+      <Project>{AB15A9C1-4B12-4D91-8611-D0161E749F7E}</Project>
+      <Name>BwCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Irony\010.Irony.2010.csproj">
+      <Project>{D81F5C91-D7DB-46E5-BC99-49488FB6814C}</Project>
+      <Name>010.Irony.2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Compile\Lex\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

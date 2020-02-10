@@ -1,0 +1,96 @@
+//
+//Blocks World
+//
+
+namespace BwMiaSamples
+
+    method BloxSample
+
+        predicate isClear(bool)
+        
+        + BloxContext:
+
+            Table1 `Table,
+                isClear true
+
+            Block1 `Block,
+                onTop Table1
+                isClear true
+
+            Block2 `Block,
+                onTop Block1
+                isClear true
+
+            Block3 `Block,
+                onTop Block2
+                isClear true
+
+            stack Block1 `on Block2
+
+            stack Block2 `on Block3
+
+        blox `context BloxContext
+
+        method Blox(blox)
+                
+            method Impasse()
+                where
+                    ($g `Goal) status Active
+                -->
+                    * @ /$g
+                ~=>
+                    halt
+                    
+            method GoalElab(+ $g `Goal)
+                + $g status Active
+
+            method NotGoalElab(- $g `Goal)
+                - $g status Active
+                    
+            method Stack(stack $x `on $y -> $g)
+                where
+                    not $x isClear true
+                -->
+                    /clear $x
+                ==>
+                    return
+
+				where
+                    not $y isClear true
+                -->
+                    /clear $y
+                ==>
+                    return
+                
+                where
+                    $x onTop $z
+                -->
+                    - $x onTop $z
+                    
+                + $x onTop $y
+                
+                - $g
+
+            method Clear(clear $x)
+                where
+                    $x beneath $y
+                    $z isClear true
+                    $z ~= $x
+                    $z ~= $y
+                -->
+                    * /stack $y `on $z
+
+            method NotOnTopElab(- $x onTop $y)
+                - $y beneath $x
+                + $y isClear true
+
+            method OntopElab($x onTop $y)
+                where
+                    ($y `Block) isClear true
+                -->
+                    - $y isClear true
+                where
+                    $x onTop $y
+                -->
+                    + $y beneath $x
+

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BwAgentWorkshop", "BwAgentWorkshop\BwAgentWorkshop.csproj", "{F361AD6A-8378-4C92-A2B2-6672A8D7DCB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BwAgent", "BwAgent\BwAgent.csproj", "{4BDD39FD-3B81-4697-A1C7-F5970D5C760E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BwAgentClientBase", "BwAgentClientBase\BwAgentClientBase.csproj", "{350DED3C-1DC6-4523-90F7-287C16CD6754}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F361AD6A-8378-4C92-A2B2-6672A8D7DCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F361AD6A-8378-4C92-A2B2-6672A8D7DCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F361AD6A-8378-4C92-A2B2-6672A8D7DCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F361AD6A-8378-4C92-A2B2-6672A8D7DCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDD39FD-3B81-4697-A1C7-F5970D5C760E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDD39FD-3B81-4697-A1C7-F5970D5C760E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDD39FD-3B81-4697-A1C7-F5970D5C760E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDD39FD-3B81-4697-A1C7-F5970D5C760E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350DED3C-1DC6-4523-90F7-287C16CD6754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350DED3C-1DC6-4523-90F7-287C16CD6754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350DED3C-1DC6-4523-90F7-287C16CD6754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350DED3C-1DC6-4523-90F7-287C16CD6754}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

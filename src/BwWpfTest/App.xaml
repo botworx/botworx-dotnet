@@ -1,0 +1,29 @@
+﻿<Application x:Class="BwWpfTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <XmlDataProvider x:Key="xmlDataProvider" Source="Books.xml" XPath="*"/>
+
+        <HierarchicalDataTemplate x:Key="NodeTemplate" >
+            
+            <TextBlock x:Name="tbName" Text="?" />
+            
+            <HierarchicalDataTemplate.ItemsSource>
+                <Binding XPath="child::node()" />
+            </HierarchicalDataTemplate.ItemsSource>
+            
+            <HierarchicalDataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=NodeType}" Value="Text">
+                    <Setter TargetName="tbName" Property="Text" Value="{Binding Path=Value}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=NodeType}" Value="Element">
+                    <Setter TargetName="tbName" Property="Text" Value="{Binding Path=Name}"/>
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
+            
+        </HierarchicalDataTemplate>
+        
+    </Application.Resources>
+</Application>
